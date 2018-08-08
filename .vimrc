@@ -58,6 +58,9 @@ set wildmenu
 set ignorecase
 set smartcase
 
+" disable beeping
+set vb t_vb=
+
 " share clipboard with system
 if !has("win32")
     if !has("nvim")
