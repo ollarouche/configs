@@ -62,13 +62,14 @@ set smartcase
 set vb t_vb=
 
 " share clipboard with system
-if !has("win32")
+if has('win32unix')
+    set clipboard=unnamed
+elseif has('win32')
+    set clipboard=unnamed
+else
     if !has("nvim")
         set clipboard=unnamedplus
     else
         set clipboard=unnamed
     endif
-else
-    set clipboard=unnamed
 endif
-
