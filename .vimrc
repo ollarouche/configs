@@ -12,7 +12,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " User Plugins
-Plugin 'sjl/badwolf'
 Plugin 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
@@ -39,7 +38,7 @@ set number relativenumber
 set nowrap
 
 " Highlight matching brackets "
-set showmatch 
+set showmatch
 
 " Enable wildmenu "
 set wildmenu
@@ -52,23 +51,26 @@ set smartcase
 " disable beeping
 set vb t_vb=
 
-" -------------------------------------------------------------------------------------- "
-" Custom commands " 
-" -------------------------------------------------------------------------------------- "
-
-function! RemoveTrailingWhitespacesFunction() 
-    execute "normal! mz" 
-    silent %s/\s\+$//ge 
-    execute "normal! 'z" 
-endfunction 
-command! RemoveTrailingWhitespaces call RemoveTrailingWhitespacesFunction() 
-function! ShrugFunction() 
-    execute "normal i¯\\_(?)_/¯" 
-endfunction 
-command! Shrug call ShrugFunction() 
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
 
 " -------------------------------------------------------------------------------------- "
-" Remaps 
+" Custom commands "
+" -------------------------------------------------------------------------------------- "
+
+function! RemoveTrailingWhitespacesFunction()
+    execute "normal! mz"
+    silent %s/\s\+$//ge
+    execute "normal! 'z"
+endfunction
+command! RemoveTrailingWhitespaces call RemoveTrailingWhitespacesFunction()
+function! ShrugFunction()
+    execute "normal i¯\\_(?)_/¯"
+endfunction
+command! Shrug call ShrugFunction()
+
+" -------------------------------------------------------------------------------------- "
+" Remaps
 " -------------------------------------------------------------------------------------- "
 
 " Yank rest of line "
@@ -82,7 +84,7 @@ nmap G G$
 syntax on
 
 " -------------------------------------------------------------------------------------- "
-" Swap settings 
+" Swap settings
 " -------------------------------------------------------------------------------------- "
 
 "" Store swp in central locations "
@@ -97,7 +99,7 @@ else
 endif
 
 " -------------------------------------------------------------------------------------- "
-" Clipboard settings 
+" Clipboard settings
 " -------------------------------------------------------------------------------------- "
 
 " share clipboard with system
@@ -114,15 +116,13 @@ else
 endif
 
 " -------------------------------------------------------------------------------------- "
-" Plugin options 
+" Plugin options
 " -------------------------------------------------------------------------------------- "
 
-" Lightline 
+" Lightline
 set laststatus=2
 set noshowmode
 
 if !has('gui_running')
   set t_Co=256
 endif
-
-
