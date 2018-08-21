@@ -74,8 +74,12 @@ command! Shrug call ShrugFunction()
 " Remaps
 " -------------------------------------------------------------------------------------- "
 
+" Yank rest of line "
+nmap Y y$
+
 " Center after next paragraph "
 nmap } }zz
+
 " Go to end of line when end of file "
 nmap G G$
 
