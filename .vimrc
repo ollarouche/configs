@@ -74,8 +74,6 @@ command! Shrug call ShrugFunction()
 " Remaps
 " -------------------------------------------------------------------------------------- "
 
-" Yank rest of line "
-nmap Y y$
 " Center after next paragraph "
 nmap } }zz
 " Go to end of line when end of file "
@@ -83,6 +81,13 @@ nmap G G$
 
 " Enable syntax highlight "
 syntax on
+
+" Allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
+" Shift enter and enter for new lines without going in insert mode.
+nmap <C-o> O<Esc>
+nmap <CR> o<Esc>
 
 " -------------------------------------------------------------------------------------- "
 " Swap settings
