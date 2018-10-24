@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'haya14busa/incsearch.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,6 +50,7 @@ set ignorecase
 set smartcase
 
 " disable beeping
+set visualbell
 set vb t_vb=
 
 set colorcolumn=80
@@ -65,10 +66,6 @@ function! RemoveTrailingWhitespacesFunction()
     execute "normal! 'z"
 endfunction
 command! RemoveTrailingWhitespaces call RemoveTrailingWhitespacesFunction()
-function! ShrugFunction()
-    execute "normal i¯\\_(?)_/¯"
-endfunction
-command! Shrug call ShrugFunction()
 
 " -------------------------------------------------------------------------------------- "
 " Remaps
@@ -89,7 +86,7 @@ syntax on
 " Allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
-" Shift enter and enter for new lines without going in insert mode.
+" CTRL-O and Enter for new lines without going in insert mode.
 nmap <C-o> O<Esc>
 nmap <CR> o<Esc>
 
@@ -148,3 +145,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Close NerdTree if only NerdTree is opened.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" IncSearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
