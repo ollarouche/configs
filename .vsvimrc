@@ -1,0 +1,76 @@
+" -------------------------------------------------------------------------------------- "
+" Settings
+" -------------------------------------------------------------------------------------- "
+
+" 4 Spaces instead of tabs"
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" Line number"
+set number relativenumber
+
+" Disable line wrap"
+set nowrap
+
+" Highlight matching brackets "
+set showmatch
+
+" Enable wildmenu "
+set wildmenu
+
+" setup the search such that if the pattern contains an uppercase letter, it
+" is case sensitive, otherwise, it is not
+set ignorecase
+set smartcase
+
+" disable beeping
+set visualbell
+set vb t_vb=
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=darkgray
+
+" -------------------------------------------------------------------------------------- "
+" Remaps
+" -------------------------------------------------------------------------------------- "
+
+" Yank rest of line "
+nmap Y y$
+
+" Center after next paragraph "
+nmap } }zz
+
+" Go to end of line when end of file "
+nmap G G$
+
+" Enable syntax highlight "
+syntax on
+
+" Allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
+" CTRL-O and Enter for new lines without going in insert mode.
+nmap <C-o> O<Esc>
+nmap <CR> o<Esc>
+
+" -------------------------------------------------------------------------------------- "
+" Clipboard settings
+" -------------------------------------------------------------------------------------- "
+
+" share clipboard with system
+if has('win32unix')
+    set clipboard=unnamed
+elseif has('win32')
+    set clipboard=unnamed
+else
+    if !has("nvim")
+        set clipboard=unnamedplus
+    else
+        set clipboard=unnamed
+    endif
+endif
