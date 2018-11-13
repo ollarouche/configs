@@ -15,3 +15,5 @@ sudo apt-get install ninja-build -y
 sudo apt-get install subversion -y
 sudo apt-get install htop -y
 sudo apt-get install screenfetch -y
+
+echo set completion-ignore-case on | sudo tee -a /etc/inputrc
