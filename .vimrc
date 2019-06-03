@@ -54,7 +54,7 @@ set smartcase
 set visualbell
 set vb t_vb=
 
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=darkgray
 
 " -------------------------------------------------------------------------------------- "
