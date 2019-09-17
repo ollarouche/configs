@@ -57,6 +57,9 @@ set vb t_vb=
 set colorcolumn=100
 highlight ColorColumn ctermbg=darkgray
 
+" setup backspace to work on eol and indents
+set backspace=indent,eol,start
+
 " -------------------------------------------------------------------------------------- "
 " Custom commands "
 " -------------------------------------------------------------------------------------- "
