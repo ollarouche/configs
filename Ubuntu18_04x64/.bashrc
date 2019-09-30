@@ -95,7 +95,8 @@ alias sl='ls'
 alias vim='vim.gtk'
 alias vi='vim.gtk'
 alias bim='vim.gtk'
-alias gitroot='cd $(git rev-parse --show-toplevel)'
+alias grt='cd $(git rev-parse --show-toplevel)'
+alias grepex='grep --exclude-dir=.vs --exclude-dir=.git'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
